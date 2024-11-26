@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './index.css';
+import Bai0 from './lesson/bai0';
+import Bai1 from './lesson/bai1';
+import Bai2 from './lesson/bai2';
+import Bai3 from './lesson/bai3';
+import Bai4 from './lesson/bai4';
+import Bai5Config from './lesson/bai5Config';
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+    <div>
+     <Bai5Config/>
     </div>
   );
 }
