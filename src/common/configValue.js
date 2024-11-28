@@ -5,7 +5,9 @@ const config = {
       error: "#e74c3c",
       warning: "#f39c12",
       success: "#f20909",
-      info: "#3498db"
+      info: "#3498db",
+      mauCam: '#ff0200',
+      mauXanh: '#00ff00',
     },
     errors: {
       commandNotFound: "Error: Command not found.",
@@ -14,6 +16,13 @@ const config = {
       serverError: "Error: Internal server error.",
       timeout: "Error: Command timed out.",
       missingParameters: "Error: Missing required parameters."
+    },
+    sucess: {
+      commandExecuted: "Command executed successfully.",
+      loginSuccess: "Login successful.",
+    },
+    ApiURL: {
+      baseUrl: "https://jsonplaceholder.typicode.com/v2"
     }
   };
   

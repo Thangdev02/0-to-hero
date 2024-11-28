@@ -4,21 +4,15 @@ import config from '../common/configValue';
 
 
 const Bai5Config = () => {
-    // Truy cập màu sắc
-console.log(config.colors.primary);  // Output: #3498db
-
-// Truy cập thông báo lỗi
-console.log(config.errors.commandNotFound);  // Output: Error: Command not found.
 
     return (
-        <div style={{ backgroundColor: config.colors.primary }}>
-            <h1 style={{ color: config.colors.secondary }}>Hello World</h1>
-            <button style={{ backgroundColor: config.colors.success }}>
-                Simulate Error
-            </button>
-            <button style={{ backgroundColor: config.colors.success }}>
-                Simulate Error
-            </button>
+        <div >
+            <h1 style={{color: config.colors.mauCam}}>This is Color Config</h1>
+            <h1  style={{color: config.colors.mauCam}}>This is Color Config2</h1>
+            <h1  style={{color: config.colors.mauCam}}>This is Color Config2</h1>
+            <h1  style={{color: config.colors.mauCam}}>This is Color Config2</h1>
+            <h1  style={{color: config.colors.mauCam}}>This is Color Config2</h1>
+            <h2 style={{color: config.colors.mauXanh}}>{config.sucess.loginSuccess}</h2>
         </div>
     );
 };
