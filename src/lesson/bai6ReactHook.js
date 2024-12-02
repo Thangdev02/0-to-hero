@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import CounterWithDelay from '../components/CounterComponents';
+import React, { useRef } from 'react';
 import LoginForm from '../components/loginForm';
 
 const Bai6ReactHook = () => {
-    const [count, setCount] = useState(0);
     const inputRef = useRef(null);
 
 

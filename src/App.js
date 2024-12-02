@@ -1,17 +1,27 @@
 import './index.css';
-import Bai0 from './lesson/bai0';
-import Bai1 from './lesson/bai1';
-import Bai2 from './lesson/bai2';
-import Bai3 from './lesson/bai3';
-import Bai4 from './lesson/bai4';
-import Bai5Config from './lesson/bai5Config';
-import Bai6ReactHook from './lesson/bai6ReactHook';
+import HomePage from './pages/homePage';
+import ServicesPage from './pages/servicesPage';
+import Layout from './layouts/Layouts';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ContactPage from './pages/ContactPage';
+import Notfound from './pages/Notfound';
 function App() {
- 
   return (
-  
+
     <div>
-     <Bai6ReactHook/>
+
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<HomePage />} /> //moi route la 1 duong dan chua 1 component page // khong the co 1 route trung path
+            <Route path='/service' element={<ServicesPage />} />
+            <Route path='/contact' element={<ContactPage />} />
+            <Route path='*' element={<Notfound />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+
+
     </div>
   );
 }
