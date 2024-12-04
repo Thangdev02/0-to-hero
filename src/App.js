@@ -10,7 +10,7 @@ function App() {
 
     <div>
 
-      <BrowserRouter>
+      <BrowserRouter> 
         <Layout>
           <Routes>
             <Route path='/' element={<HomePage />} /> //moi route la 1 duong dan chua 1 component page // khong the co 1 route trung path
