@@ -14,6 +14,7 @@ const HeaderLayouts = () => {
             <li><a href="/contact" style={linkStyle}>Contact</a></li> */}
             <Link to='/' style={linkStyle}>Home</Link>
             <Link to='/service' style={linkStyle}>Service</Link>
+            <Link to='/store' style={linkStyle}>Store</Link>
             <Link to='/contact' style={linkStyle}>Contact</Link>
           </ul>
         </nav>

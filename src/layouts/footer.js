@@ -1,19 +1,17 @@
 import React from 'react';
+import { Box, Typography, Container } from '@mui/material';
 
 // Footer component
 const Footer = () => {
   return (
     <footer style={footerStyle}>
-      <div style={contentStyle}>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-        <nav>
-          <ul style={navStyle}>
-            <li><a href="/about" style={linkStyle}>About</a></li>
-            <li><a href="/contact" style={linkStyle}>Contact</a></li>
-            <li><a href="/privacy" style={linkStyle}>Privacy Policy</a></li>
-          </ul>
-        </nav>
-      </div>
+      <Box style={contentStyle} sx={{ backgroundColor: '#333', color: '#fff', padding: '20px 0' }}>
+        <Container maxWidth="lg">
+                <Typography variant="body2" align="center">
+                    &copy; {new Date().getFullYear()} My Website. All rights reserved.
+                </Typography>
+            </Container>
+      </Box>
     </footer>
   );
 };
@@ -22,7 +20,6 @@ const Footer = () => {
 const footerStyle = {
   backgroundColor: '#333',
   color: 'white',
-  padding: '20px 0',
   textAlign: 'center',
   position: 'fixed',
   bottom: 0,
