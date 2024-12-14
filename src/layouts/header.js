@@ -16,6 +16,7 @@ const HeaderLayouts = () => {
             <Link to='/service' style={linkStyle}>Service</Link>
             <Link to='/store' style={linkStyle}>Store</Link>
             <Link to='/contact' style={linkStyle}>Contact</Link>
+            <Link to='/admin' style={linkStyle}>Dashboard</Link>
           </ul>
         </nav>
       </div>
