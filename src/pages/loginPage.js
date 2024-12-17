@@ -17,7 +17,7 @@ const Login = () => {
       const user = await loginService(username, password);
       // Redirect based on user role
       if (user.role === 'admin') {
-        navigate('/service'); // Navigate to admin dashboard
+        navigate('/admin'); // Navigate to admin dashboard
       } else {
         navigate('/'); // Navigate to user dashboard
       }
