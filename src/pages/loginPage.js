@@ -21,6 +21,7 @@ const Login = () => {
       } else {
         navigate('/'); // Navigate to user dashboard
       }
+      window.location.reload();
     } catch (err) {
       setError(err.message);
     }

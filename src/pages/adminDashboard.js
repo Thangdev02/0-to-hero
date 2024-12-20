@@ -18,20 +18,25 @@ const AdminDashboard = () => {
     const [openCreateModal, setOpenCreateModal] = useState(false);
     const [openUpdateModal, setOpenUpdateModal] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
-    const [selectedComic, setSelectedComic] = useState(null);
-
+    const [selectedComic, setSelectedComic] = useState(null); //de nhan duoc comic
+   
     const fetchComics = async () => { // ly do tao ham rieng, la de truyen call back, khi tao 1 Comics moi thi goi lai ham fetch Comic, de no reload lai co cai moi nhat
         try {
-            const res = await axios.get('https://67526dd0d1983b9597b62d05.mockapi.io/comics');
-            setDatas(res.data);
+            // const res = await axios.get('https://67526dd0d1983b9597b62d05.mockapi.io/comics');
+            // setDatas(res.data);
+            axios.get("https://67526dd0d1983b9597b62d05.mockapi.io/comics")
+            .then(res => {
+                setDatas(res.data);
+            })
         } catch (err) {
             console.error(err.message);
         }
     };
-
+ 
     useEffect(() => {
         fetchComics();
-    }, []);
+        console.log('useEffect');
+    },[]); //-> depency list, cho de xem la co gi thay doi khong, neu co thi chay lai useEffect
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -108,18 +113,18 @@ const AdminDashboard = () => {
             </TableContainer>
             <CreateModal
                 open={openCreateModal}
-                onClose={() => setOpenCreateModal(false)}
-                onCreated={fetchComics}
+                onClose={() => setOpenCreateModal(false)} //false
+                onCreated={fetchComics} //Function : fetch api
             />
             <UpdateModal
-                open={openUpdateModal}
-                onClose={() => setOpenUpdateModal(false)}
-                comic={selectedComic}
+                open={openUpdateModal} //true
+                onClose={() => setOpenUpdateModal(false)} //false
+                comic={selectedComic} //truyen di cai comic da duoc chon qua kia de ben kia show dc du lieu comic
                 onUpdated={fetchComics}
             />
             <DeleteModal
-                open={openDeleteModal}
-                onClose={() => setOpenDeleteModal(false)}
+                open={openDeleteModal} //true
+                onClose={() => setOpenDeleteModal(false)} //false
                 comic={selectedComic}
                 onDeleted={fetchComics}
             />

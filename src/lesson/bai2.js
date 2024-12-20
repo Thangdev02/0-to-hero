@@ -13,7 +13,7 @@ const Bai2 = () => {
     // const object = {name: 'John', age: 30}; //doi tuong , doi tuong co nhieu thong tin
     //truoc dau 2 cham -> key
     //sau dau 2 cham -> values
- // -> data type - kieu du lieu
+    // -> data type - kieu du lieu
     // console.log(typeof number)
     // console.log(typeof name)
     // console.log(typeof isTrue)
@@ -37,19 +37,51 @@ const Bai2 = () => {
     // console.log(object);
     //typeOf
 
-//     let x = 10
-//     x = 20;
-//     var y = 30;
-//     y = 40;
-//     const z = 50;
-//     z = 60;
-   const typeOfNumber = typeof array;
+    //     let x = 10
+    //     x = 20;
+    //     var y = 30;
+    //     y = 40;
+    //     const z = 50;
+    //     z = 60;
+    //    const typeOfNumber = typeof array;
 
+
+    //Declare Let Const Var -> vi minh khong muon du lieu bi anh huong ma khong kiem soat -> Const
+    // Datatype, JavaSciprt -> initial type  : any , khhi e chua assign du lieu
+
+    const x = 10;
+    const y = "Hello"
+    const isSuccess = true;
+    const price = 10.5;
+    const user = {
+        name: "John",
+        age: 30
+    }
+    const array = [
+        {
+            name: "John", //key/ value
+            age: 30
+        },
+        {
+            name: "John",
+            age: 30
+        }
+    ]
+    console.log(user)
+    console.log(array)
+
+
+    const string = 10;
+    const number = 'Hello'
+    const account = {
+        name: "John",
+        age: 30
+    }
 
     return (
         <div>
             <h1>Bai 2</h1>
-            <h3>Restult:{typeOfNumber} </h3>
+            {/* <h3>Restult:{typeOfNumber} </h3> */}
         </div>
     );
 };

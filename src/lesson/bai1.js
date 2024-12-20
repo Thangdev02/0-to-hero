@@ -8,7 +8,7 @@ const Bai1 = () => {
     // x = 20;  // Giá trị có thể thay đổi
     // x = 30;  // Giá trị có thể thay đổi 
     // console.log(30);  // Output: 20
-    
+
 
     //Const 
     //Không thể thay đổi giá trị: Một khi giá trị đã được gán cho const
@@ -18,13 +18,35 @@ const Bai1 = () => {
     // Sẽ gây lỗi: Assignment to constant variable.
 
 
+    // const y = 10;
+    // y = 20;
+    // console.log("Result:", y);
+
     //var
     // var z = 10;
     // z = 20;  // Giá trị có thể thay đổi
     // z = 50;  // Giá trị có thể thay đổi
 
+    // console.log("Result:", z);
 
 
+
+    function varTest(){
+            if(true){
+                var x = 10 //var -> global variable
+            }
+            console.log("Result X:", x)
+    }
+    varTest();
+
+    function testVar(){
+        if(true){
+            let z= 20;
+            
+        }
+        console.log("Result Z:", z)
+    }
+    testVar();
     // function testVar() {
     //     if (true) {
     //         var x = 10; //global
@@ -45,11 +67,14 @@ const Bai1 = () => {
 
     var z = 10
     z = 40;
-  
+    
+    const x = 20;
+    x = 40;
+
     return (
         <div>
             <h1>Bai 1</h1>
-            <h3>Result: {z} </h3>
+            <h2>Hello {x}</h2>
         </div>
     );
 };

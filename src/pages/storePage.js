@@ -3,7 +3,11 @@ import Data from '../data/Data';
 import CardProduct from '../components/CardProduct';
 import axios from 'axios';
 
-const StorePage = () => {
+const StorePage = () => { 
+    //trang thai luc dau cua bien number = 0
+    // in number = 0
+    //hanh dong + 1 -> number = 1
+   
    const [datas , setDatas] = useState(Data);
    useEffect(() => {
         axios.get('https://67526dd0d1983b9597b62d05.mockapi.io/comics').then(res => {
@@ -13,7 +17,6 @@ const StorePage = () => {
 
     return (
         <div>
-
             {/* Display Filtered Products */}
             <div>
                 {datas.length === 0 ? (

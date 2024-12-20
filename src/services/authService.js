@@ -13,11 +13,14 @@ export const loginService = async (username, password) => {
     );
 
     if (user) {
-      localStorage.setItem('key', JSON.stringify(user));
+    // console.log(user);
+    localStorage.setItem('key', JSON.stringify(user));
+    // console.log(JSON.stringify(user))
       return user; // Return the user details if a match is found
     } else {
       throw new Error('Invalid username or password');
     }
+
   } catch (error) {
     throw new Error(error.response?.data?.message || 'Failed to authenticate');
   }

@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path='/' element={<PrivateRouter emlement={HomePage} role='user' />} /> //moi route la 1 duong dan chua 1 component page // khong the co 1 route trung path
+            <Route path='/' element={<PrivateRouter element={HomePage} role='user' />} /> //moi route la 1 duong dan chua 1 component page // khong the co 1 route trung path
             <Route path='/login' element={<Login />} />
             <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} />
             <Route path='/contact' element={<ContactPage />} />

@@ -1,11 +1,23 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Header component
 const HeaderLayouts = () => {
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const key = localStorage.getItem('key');
+    setIsLoggedIn(key);
+  }, []);
+
   const handleNavigateLogin = () =>{
+    navigate('/login');
+  }
+  const handleLogout = () => {
+    localStorage.removeItem('key');
+    setIsLoggedIn(false);
     navigate('/login');
   }
   return (
@@ -24,7 +36,12 @@ const HeaderLayouts = () => {
             <Link to='/admin' style={linkStyle}>Dashboard</Link>
           </ul>
         </nav>
-        <Button variant="contained" onClick={handleNavigateLogin}>Login</Button>
+        {!isLoggedIn && (
+          <Button variant="contained" onClick={handleNavigateLogin}>Login</Button>
+        )}
+        {isLoggedIn && (
+          <Button variant="contained" onClick={handleLogout}>Logout</Button>
+        )}
       </div>
     </header>
   );

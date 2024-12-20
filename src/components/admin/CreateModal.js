@@ -2,14 +2,14 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, TextField } from '@mui/material';
 
-const CreateModal = ({ open, onClose, onCreated }) => {
+const CreateModal = ({ open, onClose, onCreated }) => { //open = true //false //fetchComic //calback
     const [fromData, setFormData] = useState({
         Title: '',
         Price: '',
         Category: '',
         ComicImage: '',
         Author: '',
-    })// anh dang tao initial value cho form
+    })// anh dang tao initial value cho form, luu requestbody
     const handleChange = (e) => {
         setFormData({ ...fromData, [e.target.name]: e.target.value }); // ... la ke thua, giu lai nhung gia tri da thay doi, da co trong formData
         //Hien dtai Initial dang rong, bay gio ng dung nhap vao Title "Hello" thi se luu hello vao title, va ke thua lai nhung thang khac (Price, Category,.. "", ) 
@@ -21,7 +21,7 @@ const CreateModal = ({ open, onClose, onCreated }) => {
                 ...fromData,
                 Author: [{ name: fromData.Author, avatar: '' }],
             });
-            onCreated();
+            onCreated(); // fetch comics
             onClose();
         }
         catch (err) {

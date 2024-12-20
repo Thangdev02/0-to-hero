@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, TextField } from '@mui/material';
 import axios from 'axios';
 
-const UpdateModal = ({ open, onClose, onUpdated, comic }) => {
+const UpdateModal = ({ open, onClose, onUpdated, comic }) => { //fetchComics
   const [formData, setFormData] = useState({
     Title: '',
     Price: '',
@@ -15,8 +15,10 @@ const UpdateModal = ({ open, onClose, onUpdated, comic }) => {
   useEffect(() => {
     if (comic) {
       setFormData(comic);
+      console.log(comic)
     }
   }, [comic]);
+  console.log("Formdata",formData)
 
   // Handle input changes for generic fields
   const handleChange = (e) => {
@@ -27,7 +29,7 @@ const UpdateModal = ({ open, onClose, onUpdated, comic }) => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `https://67526dd0d1983b9597b62d05.mockapi.io/comics/${comic.id}`,
+        `https://67526dd0d1983b9597b62d05.mockapi.io/comics/${comic.id}`, //id cua commic
         formData // nguoi dung da thay doi roi
       );
       onUpdated(); // Notify parent component to refresh data
