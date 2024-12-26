@@ -10,25 +10,30 @@ import AdminDashboard from './pages/adminDashboard';
 import PrivateRouter from './routes/privateRouter';
 function App() {
   return (
-
     <div>
-
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path='/' element={<PrivateRouter element={HomePage} role='user' />} /> //moi route la 1 duong dan chua 1 component page // khong the co 1 route trung path
-            <Route path='/login' element={<Login />} />
-            <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} />
-            <Route path='/contact' element={<ContactPage />} />
-            <Route path='/admin' element={<PrivateRouter element={AdminDashboard} role='admin' />} />
-            <Route path='*' element={<Notfound />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          
+          <Route
+            path='/*'
+            element={
+              <Layout>
+                <Routes>
+                  <Route path='/' element={<PrivateRouter element={HomePage} role='user' />} />
+                  <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} />
+                  <Route path='/contact' element={<ContactPage />} />
+                  <Route path='/admin' element={<PrivateRouter element={AdminDashboard} role='admin' />} />
+                  <Route path='*' element={<Notfound />} />
+                </Routes>
+              </Layout>
+            }
+          />
+        </Routes>
       </BrowserRouter>
-
-
     </div>
   );
 }
 
 export default App;
+

@@ -67,8 +67,8 @@ const Bai2 = () => {
             age: 30
         }
     ]
-    console.log(user)
-    console.log(array)
+    // console.log(user)
+    // console.log(array)
 
 
     const string = 10;
@@ -77,6 +77,34 @@ const Bai2 = () => {
         name: "John",
         age: 30
     }
+
+
+    // const quanlity = 10;
+    const quanlity = "10";
+    const quanlity2 = 10;
+    console.log( quanlity)
+    console.log( quanlity2)
+
+    const array2 =[
+        {
+            name: "John",
+            age: 30
+        },
+        {
+            name: "Div",
+            age: 32
+        }
+    ]; //mang []
+    console.log(array2)
+    console.log( typeof array2)
+
+    const acc = {
+        userName: "John",
+        age: 30
+    }
+    console.log(acc) //doi tuong {}
+    console.log( typeof acc)
+
 
     return (
         <div>

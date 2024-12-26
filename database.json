@@ -1,0 +1,85 @@
+{
+    "Product": [
+      {
+        "id": 1,
+        "ProductName": "Wireless Mouse",
+        "CategoryID": 1,
+        "Description": "A high-precision wireless mouse.",
+        "Discount": 10,
+        "ProductPrice": 25.0,
+        "FinalPrice": 22.5,
+        "ImageURL": "https://example.com/images/mouse.jpg",
+        "Available": true,
+        "Rating": 4.5,
+        "CreatedAt": "2024-12-01",
+        "UpdatedAt": "2024-12-15"
+      },
+      {
+        "id": 2,
+        "ProductName": "Mechanical Keyboard",
+        "CategoryID": 2,
+        "Description": "Durable and tactile mechanical keyboard.",
+        "Discount": 15,
+        "ProductPrice": 100.0,
+        "FinalPrice": 85.0,
+        "ImageURL": "https://example.com/images/keyboard.jpg",
+        "Available": false,
+        "Rating": 4.8,
+        "CreatedAt": "2024-12-05",
+        "UpdatedAt": "2024-12-20"
+      }
+    ],
+    "User": [
+      {
+        "id": 1,
+        "FullName": "John Doe",
+        "Phone": "123-456-7890",
+        "DOB": "1990-01-15",
+        "Address": "123 Main St, Cityville",
+        "Email": "johndoe@example.com",
+        "Avatar": "https://example.com/images/avatar1.jpg"
+      },
+      {
+        "id": 2,
+        "FullName": "Jane Smith",
+        "Phone": "987-654-3210",
+        "DOB": "1992-05-25",
+        "Address": "456 Elm St, Townsville",
+        "Email": "janesmith@example.com",
+        "Avatar": "https://example.com/images/avatar2.jpg"
+      }
+    ],
+    "Account": [
+      {
+        "id": 1,
+        "Username": "johndoe",
+        "Password": "password123",
+        "Role": "admin",
+        "UserID": 1
+      },
+      {
+        "id": 2,
+        "Username": "janesmith",
+        "Password": "securepassword",
+        "Role": "user",
+        "UserID": 2
+      }
+    ],
+    "Categories": [
+      {
+        "id": 1,
+        "CategoryName": "Accessories",
+        "Description": "Computer accessories and peripherals.",
+        "CreatedAt": "2024-11-01",
+        "UpdatedAt": "2024-12-01"
+      },
+      {
+        "id": 2,
+        "CategoryName": "Keyboards",
+        "Description": "High-quality computer keyboards.",
+        "CreatedAt": "2024-11-15",
+        "UpdatedAt": "2024-12-10"
+      }
+    ]
+  }
+  
