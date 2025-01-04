@@ -2,7 +2,12 @@ import React from 'react';
 
 const Bai1 = () => {
 
-    //Declare Variable
+    //Declare Variable Khai bao bien
+    //var, let, const
+
+    const x = 10;
+
+    console.log(x);
     //Let
     // let x = 10;
     // x = 20;  // Giá trị có thể thay đổi
@@ -31,22 +36,24 @@ const Bai1 = () => {
 
 
 
-    function varTest(){
-            if(true){
-                var x = 10 //var -> global variable
-            }
-            console.log("Result X:", x)
-    }
-    varTest();
-
+    // function varTest(){
+    //         if(true){
+    //             var x = 10 //var -> global variable
+    //         }
+    //         console.log("Result X:", x)
+    // }
+    // varTest();
+ //khai bao bien la sai const // de tranh truong hop du lieu bi bien dong ma minh khong biet
     function testVar(){
+
         if(true){
-            let z= 20;
+            var z = 20; //var let, var co pham vi global, let thi local
             
         }
         console.log("Result Z:", z)
     }
     testVar();
+    
     // function testVar() {
     //     if (true) {
     //         var x = 10; //global
@@ -65,16 +72,11 @@ const Bai1 = () => {
     // testLet();
 
 
-    var z = 10
-    z = 40;
-    
-    const x = 20;
-    x = 40;
+   
 
     return (
         <div>
             <h1>Bai 1</h1>
-            <h2>Hello {x}</h2>
         </div>
     );
 };

@@ -1,23 +1,19 @@
 import React from 'react';
 import ButtonComponents from '../components/ButtonComponents';
+import InforCard from '../components/InforCard';
 
 const Bai7Props = () => {
-    // function greet(name, callback) {
-    //     console.log("Xin chào, " + name);
-    //     callback();  // Gọi hàm callback sau khi in lời chào
-    //   }
-      
-    //   function sayGoodbye() {
-    //     console.log("Tạm biệt!");
-    //   }
-      
-    //   // Gọi hàm greet và truyền hàm sayGoodbye làm callback
-    //   greet("Hannah", sayGoodbye);
-      
+   
+      //Props la truyen du lieu tu cha xuong con. Cho truyen la cha, cho nhan la con
+      //Nhung luc lam la nen lam thang con truoc
     //components cha
     return (
         <div>
-            <ButtonComponents text="Submit"  backgroundColor="red"/>
+            {/* <ButtonComponents text="Submit"  backgroundColor="red"/> */}
+            <h1>Bai 7</h1>
+            <InforCard color="red" name="Thang" address="HCM"></InforCard> 
+            <InforCard color="blue" name="Minh" address="Ha Noi"></InforCard> 
+
         </div>
     );
 };

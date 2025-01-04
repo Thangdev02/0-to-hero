@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonComponents = (props) => { //ko destructuring
+const ButtonComponents = (props) => {
     return (
         <div>
             <button style={{background: props.backgroundColor}} type='button'>{props.text}</button>

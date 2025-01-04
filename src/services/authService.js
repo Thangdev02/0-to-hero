@@ -16,6 +16,7 @@ export const loginService = async (username, password) => {
     // console.log(user);
     localStorage.setItem('key', JSON.stringify(user));
     // console.log(JSON.stringify(user))
+    console.log(user);
       return user; // Return the user details if a match is found
     } else {
       throw new Error('Invalid username or password');

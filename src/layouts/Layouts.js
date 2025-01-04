@@ -3,12 +3,12 @@ import HeaderLayouts from './header';
 import Footer from './footer';
 
 // Layout component
-const Layout = ({ children }) => { //tham so //desctructuring
+const Layout = ({ children }) => { //destructuring.
   return (
     <div className="layout">
       <HeaderLayouts />
       <main>
-        {children}  {/* Các component con sẽ được render tại đây */}
+        {children} 
       </main>
      <Footer/>
     </div>

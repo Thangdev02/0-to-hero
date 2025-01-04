@@ -13,15 +13,16 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login />} /> // khong children thi no se co header va footer
           
           <Route
             path='/*'
             element={
-              <Layout>
+              <Layout> //children, nhung thang co children thi moi co header va footer
                 <Routes>
                   <Route path='/' element={<PrivateRouter element={HomePage} role='user' />} />
-                  <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} />
+                  {/* <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} /> */}
+                  <Route path='/store' element={<StorePage />} />
                   <Route path='/contact' element={<ContactPage />} />
                   <Route path='/admin' element={<PrivateRouter element={AdminDashboard} role='admin' />} />
                   <Route path='*' element={<Notfound />} />
