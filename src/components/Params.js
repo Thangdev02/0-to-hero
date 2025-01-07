@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Params = ({ name, age }) => {
+const Params = ({ name, age }) => { //tinh chat JSX, desctruring
     return (
         <div>
             <h1>Name: {name}</h1> 

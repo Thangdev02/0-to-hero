@@ -3,7 +3,7 @@ import HeaderLayouts from './header';
 import Footer from './footer';
 
 // Layout component
-const Layout = ({ children }) => { //destructuring.
+const Layout = ({ children }) => { 
   return (
     <div className="layout">
       <HeaderLayouts />
