@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
 const Lesson9Event = () => {
-    // const [value, setValue] = useState('');
+    const [value, setValue] = useState('');
 
-    // const handleChange = (e) => { //e nay la viet tat cua event su kien onChange
-    //     console.log("nguoi dung vua nhap vao:", e.target.value) //a
-    //     setValue(e.target.value); //a
-    // }
+    const handleChange = (event) => {
+        console.log(event.target.value);
+        setValue(event.target.value);//ab
+    }
     //onChange event se sai khi minh muon gan 1 du lieu tu input
     //onChange no se chay khi cai input do co su thay doi
 
-    // const handleClick = (name) => {
-    //     alert("Hello",name);
-    // }
+    const handleClick = (name) => {
+        alert(`${name}Hello`);
+    }
 
     // const clickMe = ()=> {
     //     console.log("CLicked")
@@ -32,16 +32,25 @@ const Lesson9Event = () => {
     // //onFocus
     const [focus, setFocus] = useState(false);
 
+    const clickToHello = (name) =>{
+        alert("Hello",name);
+    }
+
     return (
         <div>
             {/* OnChange */}
-            {/* <input type="text" onChange={handleChange} />
-            <p>{value}</p> */}
+            <input type="text" onChange={handleChange} />
+            <p>{value}</p>
 
             {/* OnClick */}
-            {/* <button onClick={() => handleClick("Thang")}>Submit</button> */}
+            <button onClick={() => handleClick("Thang")}>Submit</button> 
                 {/* <button onClick={clickMe}>CLick</button> */}
-
+        {/* <h1 onClick={clickToHello}>
+        Click o day
+        </h1> */}
+            {/* <button onClick={clickToHello}>
+                Click me
+            </button> */}
             {/* OnHover */}
                 {/* nen sai css */}
             {/* <div
@@ -68,7 +77,6 @@ const Lesson9Event = () => {
                 />
                 <button type="submit">Submit</button>
             </form>  */}
-
 
 
             <div>

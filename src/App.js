@@ -8,6 +8,7 @@ import StorePage from './pages/storePage';
 import Login from './pages/loginPage';
 import AdminDashboard from './pages/adminDashboard';
 import PrivateRouter from './routes/privateRouter';
+import ShoePage from './pages/shoePage';
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
                   {/* <Route path='/store' element={<PrivateRouter element={StorePage} role='user' />} /> */}
                   <Route path='/store' element={<StorePage />} />
                   <Route path='/contact' element={<ContactPage />} />
+                  <Route path='/shoes' element={<ShoePage />} />
                   <Route path='/admin' element={<PrivateRouter element={AdminDashboard} role='admin' />} />
                   <Route path='*' element={<Notfound />} />
                 </Routes>
