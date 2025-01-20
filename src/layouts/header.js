@@ -5,19 +5,23 @@ import { Link, useNavigate } from 'react-router-dom';
 // Header component
 const HeaderLayouts = () => {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
-  useEffect(() => {
-    const key = localStorage.getItem('key');
-    setIsLoggedIn(key);
-  }, []);
+    useEffect(() => {
+      const hasRefreshed = sessionStorage.getItem('hasRefreshed');
+      
+      if (isLogin && !hasRefreshed) {
+        sessionStorage.setItem('hasRefreshed', 'true'); // Mark as refreshed
+        window.location.reload(); // Refresh the page once
+      }
+    }, [isLogin]);
 
   const handleNavigateLogin = () =>{
     navigate('/login');
   }
   const handleLogout = () => {
     localStorage.removeItem('key');
-    setIsLoggedIn(false);
+    setIsLogin(false);
     navigate('/login');
   }
   return (
@@ -36,10 +40,10 @@ const HeaderLayouts = () => {
             <Link to='/admin' style={linkStyle}>Dashboard</Link>
           </ul>
         </nav>
-        {!isLoggedIn && (
+        {!setIsLogin && (
           <Button variant="contained" onClick={handleNavigateLogin}>Login</Button>
         )}
-        {isLoggedIn && (
+        {setIsLogin && (
           <Button variant="contained" onClick={handleLogout}>Logout</Button>
         )}
       </div>

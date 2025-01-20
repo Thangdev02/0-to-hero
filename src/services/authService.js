@@ -1,28 +1,60 @@
+// services/authService.js
+
 import axios from 'axios';
 
-const API_URL = 'https://67526dd0d1983b9597b62d05.mockapi.io/account';
+// Base URL of your API
+const BASE_URL = 'http://localhost:5086/api';
 
+// Function to log in a user
 export const loginService = async (username, password) => {
   try {
-    const response = await axios.get(API_URL);
-    const users = response.data;
+    const response = await axios.post(`${BASE_URL}/Auth/login`, {
+      username,
+      password,
+    });
 
-    // Find a user with matching username and password
-    const user = users.find(
-      (user) => user.username === username && user.password === password
-    );
+    const { token } = response.data;
 
-    if (user) {
-    // console.log(user);
-    localStorage.setItem('key', JSON.stringify(user));
-    // console.log(JSON.stringify(user))
-    console.log(user);
-      return user; // Return the user details if a match is found
-    } else {
-      throw new Error('Invalid username or password');
-    }
+    // Save token to localStorage for persistence
+    localStorage.setItem('authToken', token);
 
+    // Decode token if you need additional data (like roles)
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload;
   } catch (error) {
-    throw new Error(error.response?.data?.message || 'Failed to authenticate');
+    // Handle errors and throw them for the UI to handle
+    throw new Error(
+      error.response?.data?.message || 'Login failed. Please try again.'
+    );
   }
 };
+
+// Function to log out a user
+export const logoutService = () => {
+  // Clear token from localStorage
+  localStorage.removeItem('authToken');
+};
+
+// Function to get the saved token
+export const getToken = () => {
+  return localStorage.getItem('authToken');
+};
+
+// Axios instance for authenticated requests
+export const apiInstance = axios.create({
+  baseURL: BASE_URL,
+});
+
+// Add an interceptor to include the token in every request
+apiInstance.interceptors.request.use(
+  (config) => {
+    const token = getToken();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);

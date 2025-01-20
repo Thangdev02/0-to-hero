@@ -12,20 +12,36 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
-
+  
     try {
       const user = await loginService(username, password);
+  
+      // Decode the token to extract the user's role
+      const token = localStorage.getItem('authToken');
+      const base64Url = token.split('.')[1];
+      const payload = JSON.parse(atob(base64Url));
+  
+      console.log('Decoded Payload:', payload); // Log the payload to inspect its content
+  
+      // Extract the role correctly from the payload
+      const userRole =
+        payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+  
+      console.log('User Role:', userRole);
       // Redirect based on user role
-      if (user.role === 'admin') {
-        navigate('/admin'); // Navigate to admin dashboard
+      if (userRole === 'admin') {
+        navigate('/admin');
+      } else if (userRole === 'user') {
+        navigate('/');
       } else {
-        navigate('/'); // Navigate to user dashboard
+        throw new Error('Unknown user role'); // This is where the error occurs
       }
-      window.location.reload();
     } catch (err) {
-      setError(err.message);
+      setError(err.message); // Display the error
     }
   };
+  
+  
 
   return (
     <Box
